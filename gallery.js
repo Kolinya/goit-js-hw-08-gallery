@@ -1,4 +1,4 @@
-import galleryImages from "../gallery-items.js";
+import galleryImages from "./gallery-items.js";
 const refs = {
   galleryEl: document.querySelector(".js-gallery"),
   modalEl: document.querySelector(".js-lightbox"),
