@@ -32,15 +32,16 @@ function toOpenModal(event) {
   }
   event.preventDefault();
   refs.modalEl.classList.add("is-open");
-  refs.modalImageEl.setAttribute(
-    "src",
-    event.target.getAttribute("data-source")
+
+  setAttr(
+    event.target.getAttribute("data-source"),
+    event.target.getAttribute("alt")
   );
 }
 
 function toCloseModal() {
   refs.modalEl.classList.remove("is-open");
-  refs.modalImageEl.removeAttribute("src");
+  setAttr("", "");
 }
 
 function closeModal(event) {
@@ -56,4 +57,8 @@ function onButtonKey(event) {
   if (event.code === "Escape") {
     toCloseModal();
   }
+}
+function setAttr(src, alt) {
+  refs.modalImageEl.src = src;
+  refs.modalImageEl.alt = alt;
 }
